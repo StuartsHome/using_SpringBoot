@@ -19,3 +19,7 @@ This enables:
 
 
 `Actuator` - brings in metrics for the application, simply add dependency to POM
+
+Application:
+- H2 Console - In memory database
+- JDBC
