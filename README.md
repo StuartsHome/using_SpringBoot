@@ -1,4 +1,9 @@
 # Notes
+Application:
+- H2 Console - In memory database
+- JDBC
+- JPA Hibernate
+
 `@SpringBootApplication` annotation indicates this is a Spring Context file. 
 This enables:
 - AutoConfiguration: In the Maven Dependencies folder, there is a SpringBootAutoConfigure Jar.
@@ -19,7 +24,3 @@ This enables:
 
 
 `Actuator` - brings in metrics for the application, simply add dependency to POM
-
-Application:
-- H2 Console - In memory database
-- JDBC
