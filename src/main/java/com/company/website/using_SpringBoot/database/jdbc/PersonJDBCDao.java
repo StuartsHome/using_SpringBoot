@@ -1,10 +1,12 @@
 package com.company.website.using_SpringBoot.database.jdbc;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
 import javax.swing.tree.RowMapper;
+import javax.swing.tree.TreePath;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -19,13 +21,19 @@ public class PersonJDBCDao {
     JdbcTemplate jdbcTemplate;
 
     class PersonRowMapper implements RowMapper<Person> {
-        @Override
+       // @Override
         public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
             Person person = new Person();
             person.setId(rs.getInt("id"));
             person.setName(rs.getString("name"));
             person.setLocation(rs.getString("location"));
             person.setDob(rs.getTimestamp("dob"));
+        }
+
+        @Override
+        public int[] getRowsForPaths(TreePath[] path) {
+            // TODO Auto-generated method stub
+            return null;
         }
     }
 

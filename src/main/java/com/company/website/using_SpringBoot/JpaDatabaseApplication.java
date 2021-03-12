@@ -30,13 +30,15 @@ public class JpaDatabaseApplication implements CommandLineRunner{
 	@Override
 	public void run (String... args) throws Exception {
 		logger.info("User id 10001 -> {}", repository.findById(10001));
-		
+		logger.info("Inserting id 10005 -> {}", repository.insert(new Person(10005, "Hamid", "Birmingham", new Date())));
+		logger.info("Updating id 10003 -> {}", repository.update(new Person(10003, "Adam", "Manchester", new Date())));
+		repository.deleteById(10002);
+		logger.info("All users -> {}", repository.findAll());
 		
 		/*
-		logger.info("All users -> {}", dao.findAll());
+
 		logger.info("Deleting id 10002 -> {}", dao.deleteById(10002));
-		logger.info("Inserting id 10005 -> {}", dao.insert(new Person(10005, "Hamid", "Birmingham", new Date())));
-		logger.info("Updating id 10003 -> {}", dao.update(new Person(10003, "Adam", "Manchester", new Date())));
+		
 		*/
 
 
